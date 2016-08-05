@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		611B9F71038BDCB65182E367 /* Pods_trvlRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E855F2129438AA40C19C30B /* Pods_trvlRides.framework */; };
 		A40783F61D529B5D00F3DB0C /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40783F51D529B5D00F3DB0C /* DataStore.swift */; };
+		A40783F81D53EEFD00F3DB0C /* AirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40783F71D53EEFD00F3DB0C /* AirportViewController.swift */; };
 		A4540CBA1D514EE500471E59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4540CB91D514EE500471E59 /* HomeViewController.swift */; };
 		A4540CBC1D514F3600471E59 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4540CBB1D514F3600471E59 /* BookViewController.swift */; };
 		A4540CBE1D514F8F00471E59 /* MyTripsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4540CBD1D514F8F00471E59 /* MyTripsTableViewController.swift */; };
@@ -25,6 +26,7 @@
 		033A6FBC69E1E13502465576 /* Pods-trvlRides.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trvlRides.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trvlRides/Pods-trvlRides.debug.xcconfig"; sourceTree = "<group>"; };
 		1E855F2129438AA40C19C30B /* Pods_trvlRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trvlRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40783F51D529B5D00F3DB0C /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		A40783F71D53EEFD00F3DB0C /* AirportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportViewController.swift; sourceTree = "<group>"; };
 		A4540CB91D514EE500471E59 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A4540CBB1D514F3600471E59 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		A4540CBD1D514F8F00471E59 /* MyTripsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTripsTableViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				A4540CB91D514EE500471E59 /* HomeViewController.swift */,
 				A4540CBB1D514F3600471E59 /* BookViewController.swift */,
 				A4540CBD1D514F8F00471E59 /* MyTripsTableViewController.swift */,
+				A40783F71D53EEFD00F3DB0C /* AirportViewController.swift */,
 				A4540CC51D5151A700471E59 /* APIController.swift */,
 			);
 			name = Controller;
@@ -264,6 +267,7 @@
 				A4540CBE1D514F8F00471E59 /* MyTripsTableViewController.swift in Sources */,
 				A40783F61D529B5D00F3DB0C /* DataStore.swift in Sources */,
 				A4540CBA1D514EE500471E59 /* HomeViewController.swift in Sources */,
+				A40783F81D53EEFD00F3DB0C /* AirportViewController.swift in Sources */,
 				A4540CCA1D51536700471E59 /* Airport.swift in Sources */,
 				A4540CBC1D514F3600471E59 /* BookViewController.swift in Sources */,
 				A45698041D46782200247D8E /* AppDelegate.swift in Sources */,

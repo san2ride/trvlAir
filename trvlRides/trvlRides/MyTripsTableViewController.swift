@@ -51,7 +51,14 @@ class MyTripsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         self.currentAirport = self.airportsArray[indexPath.row]
+        self.performSegueWithIdentifier("AirportSegue", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        let controller = segue.destinationViewController as? AirportViewController
+        
+        controller?.theAirport = self.currentAirport
     }
     
 }
