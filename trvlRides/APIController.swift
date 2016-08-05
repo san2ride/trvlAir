@@ -10,7 +10,7 @@ import UIKit
 
 class APIController {
     
-    weak var delegate: AirportDelegate?
+//    weak var delegate: AirportDelegate?
     
     let headers = [
         "content-type": "application/json",

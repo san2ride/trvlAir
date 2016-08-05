@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol AirportDelegate: class {
-    func passAirport(theAirport: Airport)
-}
+//protocol AirportDelegate: class {
+//    func passAirport(theAirport: Airport)
+//}
 
-class AirportViewController: UIViewController, AirportDelegate {
+class AirportViewController: UIViewController {
     
     @IBOutlet weak var airportNameLabel: UILabel!
     @IBOutlet weak var airpotCityLabel: UILabel!
@@ -22,24 +22,20 @@ class AirportViewController: UIViewController, AirportDelegate {
     
     let APIC = APIController()
     var theAirport: Airport?
+    var airportsArray = [Airport]()
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     
-        self.APIC.delegate = self
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-    }
+        self.airportNameLabel.text = theAirport?.name
+        self.airpotCityLabel.text = theAirport?.city
+        self.airportCodeLabel.text = theAirport?.iata
+        self.airportElevationLabel.text = theAirport?.elevation
+        self.airportWebsiteLabel.text = theAirport?.website
+        
 
-    func passAirport(theAirport: Airport) {
-        self.airportNameLabel.text = theAirport.name
-        self.airpotCityLabel.text = theAirport.city
-        self.airportCodeLabel.text = theAirport.iata
-        self.airportElevationLabel.text = theAirport.elevation
-        self.airportWebsiteLabel.text = theAirport.website
-        
     }
     
-    
-
 }

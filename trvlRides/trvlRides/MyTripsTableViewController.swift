@@ -18,7 +18,6 @@ class MyTripsTableViewController: UITableViewController {
     
         var APIC = APIController()
         self.airportsArray = DataStore.sharedInstance.airportArray
-               
         tableView.reloadData()
         
 
@@ -39,10 +38,10 @@ class MyTripsTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! AirportCodeTableViewCell
         
-        let aero = self.airportsArray[indexPath.row]
+        self.currentAirport = DataStore.sharedInstance.airportArray[indexPath.row]
             
-            cell.airportNameLabel.text = aero.name
-            cell.airportCodeLabel.text = aero.iata
+            cell.airportNameLabel.text = self.currentAirport?.name
+            cell.airportCodeLabel.text = self.currentAirport?.iata
         
         return cell
         
