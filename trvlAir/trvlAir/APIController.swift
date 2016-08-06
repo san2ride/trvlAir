@@ -1,16 +1,14 @@
 //
 //  APIController.swift
-//  trvlRides
+//  trvlAir
 //
-//  Created by don't touch me on 8/2/16.
+//  Created by don't touch me on 8/5/16.
 //  Copyright © 2016 trvl, LLC. All rights reserved.
 //
 
 import UIKit
 
 class APIController {
-    
-
     
     let headers = [
         "content-type": "application/json",
@@ -40,20 +38,20 @@ class APIController {
                 if let data = data {
                     
                     do {
-                       
+                        
                         if let dict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String:AnyObject] {
                             print(dict)
                             if let airportDict = dict["airport"] as? JSONDictionary {
                                 
                                 let airport = Airport(dict: airportDict)
-                                                                print("Airport")
+                                print("Airport")
                                 
                                 dispatch_async(dispatch_get_main_queue(), {
                                     DataStore.sharedInstance.airportArray.append(airport)
                                     
                                 })
                                 
-
+                                
                             }
                             
                         }
@@ -67,5 +65,6 @@ class APIController {
         })
         dataTask.resume()
     }
-    
+
+
 }

@@ -1,19 +1,15 @@
 //
 //  AirportViewController.swift
-//  trvlRides
+//  trvlAir
 //
-//  Created by don't touch me on 8/4/16.
+//  Created by don't touch me on 8/5/16.
 //  Copyright © 2016 trvl, LLC. All rights reserved.
 //
 
 import UIKit
 
-//protocol AirportDelegate: class {
-//    func passAirport(theAirport: Airport)
-//}
-
 class AirportViewController: UIViewController {
-    
+
     @IBOutlet weak var airportNameLabel: UILabel!
     @IBOutlet weak var airportCityLabel: UILabel!
     @IBOutlet weak var airportCodeLabel: UILabel!
@@ -35,7 +31,7 @@ class AirportViewController: UIViewController {
         self.airportElevationLabel.text = theAirport?.elevation
         self.airportWebsiteLabel.text = theAirport?.website
         
-
+        
     }
-    
+
 }
