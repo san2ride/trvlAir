@@ -19,17 +19,21 @@ class HomeViewController: UIViewController {
         
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        self.airportCodeText.resignFirstResponder()
+        
+        return true
+    }
+
+    
     @IBAction func searchAirportPressed(sender: UIButton) {
         
         if let destination = airportCodeText.text {
             APIC.retrieveCode(destination)
+            
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-            
-        self.airportCodeText.resignFirstResponder()
-        return true
-    }
-
+    
 }
