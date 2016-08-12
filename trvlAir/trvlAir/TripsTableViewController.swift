@@ -9,12 +9,15 @@
 import UIKit
 
 class TripsTableViewController: UITableViewController {
-
+    let kAirport = "kAirport"
     var currentAirport: Airport?
     var airportsArray = [Airport]()
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+//        self.loadAirport()
         
         var APIC = APIController()
         self.airportsArray = DataStore.sharedInstance.airportArray
@@ -40,6 +43,7 @@ class TripsTableViewController: UITableViewController {
         
         self.currentAirport = DataStore.sharedInstance.airportArray[indexPath.row]
         
+    
         cell.airportNameLabel.text = self.currentAirport?.name
         cell.airportCodeLabel.text = self.currentAirport?.iata
         
@@ -59,5 +63,16 @@ class TripsTableViewController: UITableViewController {
         
         controller?.theAirport = self.currentAirport
     }
+    
 
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+
+            self.airportsArray.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
+    
 }

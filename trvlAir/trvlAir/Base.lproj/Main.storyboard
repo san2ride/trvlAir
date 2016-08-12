@@ -21,9 +21,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination, Airport Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZo-di-l79">
-                                <rect key="frame" x="148" y="414" width="305" height="40"/>
+                                <rect key="frame" x="150" y="94" width="300" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="JUn-1c-dpL"/>
+                                    <constraint firstAttribute="height" constant="35" id="Kwx-iS-UV1"/>
+                                    <constraint firstAttribute="width" constant="300" id="WV8-CS-Vt7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
@@ -32,11 +33,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wT3-Cs-xcB">
-                                <rect key="frame" x="148" y="486" width="305" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="9n0-ml-U8E"/>
-                                    <constraint firstAttribute="width" constant="305" id="d8x-lt-PLP"/>
-                                </constraints>
+                                <rect key="frame" x="150" y="137" width="300" height="30"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="32"/>
                                 <state key="normal" title="Search">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,25 +45,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wT3-Cs-xcB" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="CL9-sX-AuT"/>
-                            <constraint firstItem="mZo-di-l79" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Cbp-J4-zTw"/>
-                            <constraint firstItem="mZo-di-l79" firstAttribute="width" secondItem="wT3-Cs-xcB" secondAttribute="width" id="DPU-Ur-NoU"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="wT3-Cs-xcB" secondAttribute="bottom" constant="25" id="LCG-ym-z0G"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="NzP-9Y-P3S" secondAttribute="bottom" id="Yzv-sN-YSb"/>
-                            <constraint firstItem="NzP-9Y-P3S" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="bpn-Ak-j3Q"/>
-                            <constraint firstAttribute="trailing" secondItem="NzP-9Y-P3S" secondAttribute="trailing" id="qUn-ts-ZPJ"/>
-                            <constraint firstItem="wT3-Cs-xcB" firstAttribute="top" secondItem="mZo-di-l79" secondAttribute="bottom" constant="32" id="qZg-hM-HnD"/>
-                            <constraint firstItem="NzP-9Y-P3S" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="tSp-NK-KIp"/>
+                            <constraint firstItem="NzP-9Y-P3S" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="22s-u0-SQZ"/>
+                            <constraint firstItem="wT3-Cs-xcB" firstAttribute="top" secondItem="mZo-di-l79" secondAttribute="bottom" constant="8" symbolic="YES" id="CwU-Nc-Si2"/>
+                            <constraint firstItem="wT3-Cs-xcB" firstAttribute="leading" secondItem="mZo-di-l79" secondAttribute="leading" id="G2a-os-GKh"/>
+                            <constraint firstItem="wT3-Cs-xcB" firstAttribute="trailing" secondItem="mZo-di-l79" secondAttribute="trailing" id="Hmm-hq-Gmm"/>
+                            <constraint firstAttribute="trailing" secondItem="NzP-9Y-P3S" secondAttribute="trailing" id="KUt-vn-tzN"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="NzP-9Y-P3S" secondAttribute="bottom" id="TFD-3s-dN6"/>
+                            <constraint firstItem="mZo-di-l79" firstAttribute="centerX" secondItem="NzP-9Y-P3S" secondAttribute="centerX" id="Tdg-sA-6X4"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="wT3-Cs-xcB" secondAttribute="bottom" constant="384" id="dfv-1A-aZR"/>
+                            <constraint firstItem="mZo-di-l79" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="30" id="i51-MZ-LHd"/>
+                            <constraint firstItem="NzP-9Y-P3S" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="q1j-sS-jJC"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="airbus" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="airportCodeText" destination="mZo-di-l79" id="5Ks-Xg-SnB"/>
+                        <segue destination="Rbt-Qq-iKs" kind="show" identifier="tableViewSegue" id="nrP-Es-5f2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="-390"/>
+            <point key="canvasLocation" x="-116" y="-602"/>
         </scene>
         <!--Trips Table View Controller-->
         <scene sceneID="3P3-X7-DY8">
@@ -199,14 +198,27 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-Gn-vmJ">
+                                <rect key="frame" x="532" y="72" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="sln-HU-PTQ"/>
+                                    <constraint firstAttribute="width" constant="60" id="uDT-fr-3dL"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="currentPlane1"/>
+                                <connections>
+                                    <action selector="airportButtonPressed:" destination="Yod-cC-PJC" eventType="touchUpInside" id="vS5-wN-az4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Qca-Gn-vmJ" firstAttribute="top" secondItem="qW1-q4-AJI" secondAttribute="bottom" constant="8" id="1ge-KY-an1"/>
                             <constraint firstItem="rYD-id-so9" firstAttribute="top" secondItem="qW1-q4-AJI" secondAttribute="bottom" id="2z1-58-qSb"/>
                             <constraint firstItem="DC0-0C-4WF" firstAttribute="leading" secondItem="zEd-0i-hW2" secondAttribute="leading" id="6qx-42-7yV"/>
                             <constraint firstItem="bxC-dH-IpO" firstAttribute="top" secondItem="n0p-Ap-g1O" secondAttribute="bottom" constant="51" id="7ai-3f-duu"/>
                             <constraint firstItem="bbG-SQ-jxO" firstAttribute="top" secondItem="bxC-dH-IpO" secondAttribute="bottom" constant="27" id="8Fa-gG-23f"/>
                             <constraint firstItem="rYD-id-so9" firstAttribute="leading" secondItem="pyN-8t-4x2" secondAttribute="leading" id="GIx-KV-Ydh"/>
+                            <constraint firstAttribute="trailing" secondItem="Qca-Gn-vmJ" secondAttribute="trailing" constant="8" id="IZF-gk-5MC"/>
                             <constraint firstItem="bbG-SQ-jxO" firstAttribute="leading" secondItem="bxC-dH-IpO" secondAttribute="leading" id="Iph-Cx-xUI"/>
                             <constraint firstItem="bbG-SQ-jxO" firstAttribute="top" secondItem="bxC-dH-IpO" secondAttribute="bottom" constant="36" id="JFA-FA-YFS"/>
                             <constraint firstItem="n0p-Ap-g1O" firstAttribute="centerX" secondItem="pyN-8t-4x2" secondAttribute="centerX" id="KfH-hE-FHN"/>
@@ -243,13 +255,14 @@
                         <outlet property="airportElevationLabel" destination="zEd-0i-hW2" id="914-Mb-ldY"/>
                         <outlet property="airportNameLabel" destination="n0p-Ap-g1O" id="sAx-ZY-FQP"/>
                         <outlet property="airportWebsiteLabel" destination="DC0-0C-4WF" id="SJs-mi-BE0"/>
+                        <segue destination="C4o-NL-x6F" kind="show" identifier="MapSegue" id="neJ-aL-olR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SC2-ww-uL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1374" y="309"/>
         </scene>
-        <!--Explore-->
+        <!--MAP-->
         <scene sceneID="JQj-Z7-Zed">
             <objects>
                 <viewController id="C4o-NL-x6F" customClass="MapViewController" customModule="trvlAir" customModuleProvider="target" sceneMemberID="viewController">
@@ -260,13 +273,30 @@
                     <view key="view" contentMode="scaleToFill" id="VBk-6J-fJI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mnf-sq-338">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <connections>
+                                    <outlet property="delegate" destination="C4o-NL-x6F" id="tiq-ra-f20"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mnf-sq-338" secondAttribute="trailing" id="40Z-FX-O1b"/>
+                            <constraint firstItem="mnf-sq-338" firstAttribute="top" secondItem="BR1-3Q-BRh" secondAttribute="bottom" id="7hh-h1-Ogj"/>
+                            <constraint firstItem="mnf-sq-338" firstAttribute="leading" secondItem="VBk-6J-fJI" secondAttribute="leading" id="JRI-s3-MiV"/>
+                            <constraint firstItem="TGb-o2-hyE" firstAttribute="top" secondItem="mnf-sq-338" secondAttribute="bottom" id="OFy-4h-JxK"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="map" id="qRm-uc-YA6"/>
+                    <tabBarItem key="tabBarItem" title="MAP" image="map" id="qRm-uc-YA6"/>
+                    <connections>
+                        <outlet property="mapView" destination="mnf-sq-338" id="rwF-nr-W19"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXz-44-WQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="1145"/>
+            <point key="canvasLocation" x="2172" y="309"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -282,7 +312,6 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="q0g-r8-H71" kind="relationship" relationship="viewControllers" id="3IG-I8-6d6"/>
-                        <segue destination="C4o-NL-x6F" kind="relationship" relationship="viewControllers" id="6NZ-K6-dsb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -315,7 +344,11 @@
     <resources>
         <image name="airbus" width="24" height="12"/>
         <image name="aviation" width="48" height="48"/>
+        <image name="currentPlane1" width="100" height="100"/>
         <image name="map" width="24" height="24"/>
         <image name="tA1" width="960" height="300"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nrP-Es-5f2"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A43754EF1D5D066C0038DE67 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A43754EE1D5D066C0038DE67 /* MapKit.framework */; };
 		A49B97A71D5529DB0004F0D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97A61D5529DB0004F0D3 /* AppDelegate.swift */; };
 		A49B97AE1D5529DB0004F0D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49B97AC1D5529DB0004F0D3 /* Main.storyboard */; };
 		A49B97B01D5529DB0004F0D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A49B97AF1D5529DB0004F0D3 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A43754EE1D5D066C0038DE67 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A49B97A31D5529DB0004F0D3 /* trvlAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trvlAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49B97A61D5529DB0004F0D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49B97AD1D5529DB0004F0D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A43754EF1D5D066C0038DE67 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +55,7 @@
 		A49B979A1D5529DB0004F0D3 = {
 			isa = PBXGroup;
 			children = (
+				A43754EE1D5D066C0038DE67 /* MapKit.framework */,
 				A49B97A51D5529DB0004F0D3 /* trvlAir */,
 				A49B97A41D5529DB0004F0D3 /* Products */,
 			);
@@ -82,8 +86,8 @@
 			children = (
 				A49B97BE1D552A680004F0D3 /* HomeViewController.swift */,
 				A49B97C01D552A9A0004F0D3 /* TripsTableViewController.swift */,
-				A49B97CC1D552DBE0004F0D3 /* MapViewController.swift */,
 				A49B97C21D552AD40004F0D3 /* AirportViewController.swift */,
+				A49B97CC1D552DBE0004F0D3 /* MapViewController.swift */,
 				A49B97C41D552B000004F0D3 /* APIController.swift */,
 			);
 			name = Controller;
@@ -150,6 +154,11 @@
 					A49B97A21D5529DB0004F0D3 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 7QLQZLZHA6;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -349,6 +358,7 @@
 				A49B97B91D5529DB0004F0D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

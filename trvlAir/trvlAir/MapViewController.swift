@@ -7,29 +7,50 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
+    var theAirportMap: Airport?
+    var locationManager = CLLocationManager()
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        self.addPin(theAirportMap!)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func addPin(airport : Airport) {
+        
+        let latitude: Double = Double( (self.theAirportMap?.latitude)! )!
+        let longitude: Double = Double( (self.theAirportMap?.longitude)! )!
+        let name: String = ""
+        let iata: String = ""
+        
+        let location = CLLocationCoordinate2D(
+            latitude: latitude,
+            longitude: longitude
+        )
+        
+        let annotation = MKPointAnnotation()
+        
+        annotation.coordinate = location
+        annotation.title = title
+        annotation.subtitle = iata
+        
+        self.mapView.addAnnotation(annotation)
     }
-    */
-
+    
+//    func mapView(mapView: MKMapView?, didSelectAnnotationView view: MKAnnotationView?) {
+//        var appleMapsURL = "http://maps.apple.com/?q=\(view.annotation.coordinate.latitude),\(view.annotation.coordinate.longitude)"
+//        UIApplication.sharedApplication().openURL(NSURL(string: appleMapsURL)!)
+//    }
+    
+    
 }

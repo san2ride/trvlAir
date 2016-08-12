@@ -32,6 +32,9 @@ class HomeViewController: UIViewController {
         if let destination = airportCodeText.text {
             APIC.retrieveCode(destination)
             
+            airportCodeText.clearsOnBeginEditing = true
+//            self.performSegueWithIdentifier("tableViewSegue", sender: nil)
+
         }
     }
     

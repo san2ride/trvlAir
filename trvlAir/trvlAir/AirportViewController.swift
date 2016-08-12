@@ -33,5 +33,17 @@ class AirportViewController: UIViewController {
         
         
     }
+    
+    @IBAction func airportButtonPressed(sender: UIButton) {
+        
+        self.performSegueWithIdentifier("MapSegue", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let controller = segue.destinationViewController as? MapViewController
+        
+        controller?.theAirportMap = self.theAirport
+    }
 
 }
