@@ -1,0 +1,6 @@
+framework module Pods_trvlRides {
+  umbrella header "Pods-trvlRides-umbrella.h"
+
+  export *
+  module * { export * }
+}

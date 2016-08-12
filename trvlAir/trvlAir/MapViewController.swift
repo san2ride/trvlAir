@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-
+import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -47,10 +47,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.mapView.addAnnotation(annotation)
     }
     
-//    func mapView(mapView: MKMapView?, didSelectAnnotationView view: MKAnnotationView?) {
-//        var appleMapsURL = "http://maps.apple.com/?q=\(view.annotation.coordinate.latitude),\(view.annotation.coordinate.longitude)"
-//        UIApplication.sharedApplication().openURL(NSURL(string: appleMapsURL)!)
-//    }
+    func mapView(mapView: MKMapView?, didSelectAnnotationView view: MKAnnotationView?) {
+        var appleMapsURL = "http://maps.apple.com/?q=\(view.annotation.coordinate.latitude),\(view.annotation.coordinate.longitude)"
+        UIApplication.sharedApplication().openURL(NSURL(string: appleMapsURL)!)
+    }
     
     
 }
