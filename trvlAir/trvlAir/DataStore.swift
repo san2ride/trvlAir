@@ -11,7 +11,7 @@ import UIKit
 class DataStore: NSObject {
     
     static let sharedInstance = DataStore()
-    override private init() {}
+    override fileprivate init() {}
     
     var currentAirport = Airport()
     var airportArray = [Airport]()

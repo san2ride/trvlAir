@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
         
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         self.airportCodeText.resignFirstResponder()
         
@@ -27,13 +27,14 @@ class HomeViewController: UIViewController {
     }
 
     
-    @IBAction func searchAirportPressed(sender: UIButton) {
+    @IBAction func searchAirportPressed(_ sender: UIButton) {
         
         if let destination = airportCodeText.text {
             APIC.retrieveCode(destination)
             
             airportCodeText.clearsOnBeginEditing = true
-//            self.performSegueWithIdentifier("tableViewSegue", sender: nil)
+            self.tabBarController?.selectedIndex = 1;
+            self.performSegue(withIdentifier: "tableViewSegue", sender: nil)
 
         }
     }

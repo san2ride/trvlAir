@@ -22,7 +22,7 @@ class AirportViewController: UIViewController {
     
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.airportNameLabel.text = theAirport?.name
@@ -34,14 +34,14 @@ class AirportViewController: UIViewController {
         
     }
     
-    @IBAction func airportButtonPressed(sender: UIButton) {
+    @IBAction func airportButtonPressed(_ sender: UIButton) {
         
-        self.performSegueWithIdentifier("MapSegue", sender: nil)
+        self.performSegue(withIdentifier: "MapSegue", sender: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let controller = segue.destinationViewController as? MapViewController
+        let controller = segue.destination as? MapViewController
         
         controller?.theAirportMap = self.theAirport
     }

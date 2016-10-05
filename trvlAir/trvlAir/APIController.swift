@@ -20,17 +20,17 @@ class APIController {
     ]
     
     
-    func retrieveCode(searchedData: String) {
+    func retrieveCode(_ searchedData: String) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://www.air-port-codes.com/api/v1/single?iata=\(searchedData)")!,
-                                          cachePolicy: .UseProtocolCachePolicy,
+        let request = NSMutableURLRequest(url: URL(string: "https://www.air-port-codes.com/api/v1/single?iata=\(searchedData)")!,
+                                          cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         
-        request.HTTPMethod = "POST"
+        request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
         
-        let session = NSURLSession.sharedSession()
-        let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
                 print(error)
             } else {
@@ -39,14 +39,14 @@ class APIController {
                     
                     do {
                         
-                        if let dict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String:AnyObject] {
+                        if let dict = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:AnyObject] {
                             print(dict)
                             if let airportDict = dict["airport"] as? JSONDictionary {
                                 
                                 let airport = Airport(dict: airportDict)
                                 print("Airport")
                                 
-                                dispatch_async(dispatch_get_main_queue(), {
+                                DispatchQueue.main.async(execute: {
                                     DataStore.sharedInstance.airportArray.append(airport)
                                     
                                 })

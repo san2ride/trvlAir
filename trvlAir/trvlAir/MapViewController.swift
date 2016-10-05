@@ -18,7 +18,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var theAirportMap: Airport?
     var locationManager = CLLocationManager()
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         
@@ -26,7 +26,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
-    func addPin(airport : Airport) {
+    func addPin(_ airport : Airport) {
         
         let latitude: Double = Double( (self.theAirportMap?.latitude)! )!
         let longitude: Double = Double( (self.theAirportMap?.longitude)! )!
@@ -47,9 +47,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.mapView.addAnnotation(annotation)
     }
     
-    func mapView(mapView: MKMapView?, didSelectAnnotationView view: MKAnnotationView?) {
-        var appleMapsURL = "http://maps.apple.com/?q=\(view.annotation.coordinate.latitude),\(view.annotation.coordinate.longitude)"
-        UIApplication.sharedApplication().openURL(NSURL(string: appleMapsURL)!)
+    func mapView(_ mapView: MKMapView?, didSelect view: MKAnnotationView?) {
+        let appleMapsURL = "http://maps.apple.com/?q=\(view?.annotation?.coordinate.latitude),\(view?.annotation?.coordinate.longitude)"
+        UIApplication.shared.openURL(URL(string: appleMapsURL)!)
     }
     
     

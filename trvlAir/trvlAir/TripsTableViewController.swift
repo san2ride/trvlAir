@@ -14,7 +14,7 @@ class TripsTableViewController: UITableViewController {
     var airportsArray = [Airport]()
 
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
 //        self.loadAirport()
@@ -31,17 +31,17 @@ class TripsTableViewController: UITableViewController {
         reloadData()
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.airportsArray.count
         
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! AirportCodeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AirportCodeTableViewCell
         
-        self.currentAirport = DataStore.sharedInstance.airportArray[indexPath.row]
+        self.currentAirport = DataStore.sharedInstance.airportArray[(indexPath as NSIndexPath).row]
         
     
         cell.airportNameLabel.text = self.currentAirport?.name
@@ -51,26 +51,26 @@ class TripsTableViewController: UITableViewController {
         
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.currentAirport = self.airportsArray[indexPath.row]
-        self.performSegueWithIdentifier("AirportSegue", sender: nil)
+        self.currentAirport = self.airportsArray[(indexPath as NSIndexPath).row]
+        self.performSegue(withIdentifier: "AirportSegue", sender: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let controller = segue.destinationViewController as? AirportViewController
+        let controller = segue.destination as? AirportViewController
         
         controller?.theAirport = self.currentAirport
     }
     
 
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
 
-            self.airportsArray.removeAtIndex(indexPath.row)
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.airportsArray.remove(at: (indexPath as NSIndexPath).row)
+            self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
     }
     
