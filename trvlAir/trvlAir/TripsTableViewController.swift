@@ -13,13 +13,28 @@ class TripsTableViewController: UITableViewController {
     var currentAirport: Airport?
     var airportsArray = [Airport]()
 
+    @IBAction func toggleEditingMode(sender: AnyObject) {
+        
+        // If you're currently in editing mode...
+        if isEditing {
+            // Chane text of button to inform user of state
+            sender.setTitle("Edit", for: .normal)
+            
+            // Turn off editing mode
+            setEditing(false, animated: true)
+        }
+        else {
+            // Change text of button to inform user of state
+            sender.setTitle("Done", for: .normal)
+            
+            // Enter editing mode
+            setEditing(true, animated: true)
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        self.loadAirport()
-        
-        var APIC = APIController()
         self.airportsArray = DataStore.sharedInstance.airportArray
         tableView.reloadData()
         
@@ -41,9 +56,8 @@ class TripsTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AirportCodeTableViewCell
         
-        self.currentAirport = DataStore.sharedInstance.airportArray[(indexPath as NSIndexPath).row]
+        currentAirport = DataStore.sharedInstance.airportArray[indexPath.row]
         
-    
         cell.airportNameLabel.text = self.currentAirport?.name
         cell.airportCodeLabel.text = self.currentAirport?.iata
         
@@ -67,12 +81,9 @@ class TripsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
 
             self.airportsArray.remove(at: (indexPath as NSIndexPath).row)
-            self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-        }
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)        
     }
-    
     
 }

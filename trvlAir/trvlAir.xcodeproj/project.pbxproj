@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A42AD3BC1E78EE41004812E7 /* AirportDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AD3BB1E78EE41004812E7 /* AirportDataTableViewController.swift */; };
+		A42AD3BE1E78F346004812E7 /* AirportDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AD3BD1E78F346004812E7 /* AirportDataTableViewCell.swift */; };
 		A43754EF1D5D066C0038DE67 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A43754EE1D5D066C0038DE67 /* MapKit.framework */; };
 		A49B97A71D5529DB0004F0D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97A61D5529DB0004F0D3 /* AppDelegate.swift */; };
 		A49B97AE1D5529DB0004F0D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49B97AC1D5529DB0004F0D3 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A42AD3BB1E78EE41004812E7 /* AirportDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportDataTableViewController.swift; sourceTree = "<group>"; };
+		A42AD3BD1E78F346004812E7 /* AirportDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportDataTableViewCell.swift; sourceTree = "<group>"; };
 		A43754EE1D5D066C0038DE67 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A49B97A31D5529DB0004F0D3 /* trvlAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trvlAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49B97A61D5529DB0004F0D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,11 +88,11 @@
 		A49B97BA1D5529F00004F0D3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A42AD3BB1E78EE41004812E7 /* AirportDataTableViewController.swift */,
 				A49B97BE1D552A680004F0D3 /* HomeViewController.swift */,
 				A49B97C01D552A9A0004F0D3 /* TripsTableViewController.swift */,
 				A49B97C21D552AD40004F0D3 /* AirportViewController.swift */,
 				A49B97CC1D552DBE0004F0D3 /* MapViewController.swift */,
-				A49B97C41D552B000004F0D3 /* APIController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -109,6 +113,7 @@
 			children = (
 				A49B97C81D552D5C0004F0D3 /* Airport.swift */,
 				A49B97C61D552D3E0004F0D3 /* DataStore.swift */,
+				A49B97C41D552B000004F0D3 /* APIController.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 		A49B97BD1D552A2D0004F0D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A42AD3BD1E78F346004812E7 /* AirportDataTableViewCell.swift */,
 				A49B97CA1D552D850004F0D3 /* AirportCodeTableViewCell.swift */,
 			);
 			name = Views;
@@ -206,8 +212,10 @@
 				A49B97CD1D552DBE0004F0D3 /* MapViewController.swift in Sources */,
 				A49B97C91D552D5C0004F0D3 /* Airport.swift in Sources */,
 				A49B97C11D552A9A0004F0D3 /* TripsTableViewController.swift in Sources */,
+				A42AD3BC1E78EE41004812E7 /* AirportDataTableViewController.swift in Sources */,
 				A49B97C31D552AD40004F0D3 /* AirportViewController.swift in Sources */,
 				A49B97BF1D552A680004F0D3 /* HomeViewController.swift in Sources */,
+				A42AD3BE1E78F346004812E7 /* AirportDataTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
